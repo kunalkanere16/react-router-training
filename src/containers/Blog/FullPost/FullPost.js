@@ -10,6 +10,7 @@ class FullPost extends Component {
     }
 
     componentDidUpdate(){
+        
         if(this.props.id) {
             if(!this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== this.props.id)){
                 // the checks are very important or the setState will cause an infinite loop to call componentDidUpdate

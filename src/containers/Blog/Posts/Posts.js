@@ -9,6 +9,7 @@ class Posts extends Component{
     }
 
     componentDidMount(){
+        console.log(this.props);
         //this method is asynchronous
         axios.get('/posts')
             .then(response => {
@@ -41,7 +42,7 @@ class Posts extends Component{
                         title={post.title} 
                         author={post.author}
                         clicked={()=> this.postSelectedHandler(post.id)}/>
-            })
+            });
         }
 
         return (
