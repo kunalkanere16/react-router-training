@@ -42,9 +42,14 @@ class Blog extends Component {
                     {/* Gaurds example */}
                     {this.state.auth ? <Route path="/new-post"  component={NewPost} />: null}
                     {/* <Route path="/new-post"  component={NewPost} /> */}
+                    
                     <Route path="/posts" component={Posts} />
+                    {/* 404 example for unknown routes*/}
+                    <Route render={() => <h1>Not Found</h1> } />
+
                     {/* Redirect navigates to specified path */}
-                    <Redirect from="/" to="/posts" />
+                    {/* <Redirect from="/" to="/posts" /> */}
+                    {/* <Route path="/" component={Posts} /> */}
                 </Switch>
 
             </div>
