@@ -8,6 +8,9 @@ import NewPost from './NewPost/NewPost';
 
 
 class Blog extends Component {
+    state = {
+        auth: false
+    }
     render () {
         return (
             <div className="Blog">
@@ -36,7 +39,9 @@ class Blog extends Component {
 
                 {/* Route will only display components if the path match */}
                 <Switch>
-                    <Route path="/new-post"  component={NewPost} />
+                    {/* Gaurds example */}
+                    {this.state.auth ? <Route path="/new-post"  component={NewPost} />: null}
+                    {/* <Route path="/new-post"  component={NewPost} /> */}
                     <Route path="/posts" component={Posts} />
                     {/* Redirect navigates to specified path */}
                     <Redirect from="/" to="/posts" />
